@@ -12,10 +12,12 @@ const connection =mysql.createConnection({
 });
 console.log('4444....333333');
 connection.connect((err) => {
-  if (!err)
-      console.log('DB connection succeeded.');
-  else
-      console.log('DB connection failed \n Error : ' + JSON.stringify(err));
+  if (err) throw err;
+  console.log('Connected!');
+/*connection.query("CREATE DATABASE ", function (err, result) {
+    if (err) throw err;                  
+    console.log("Database created");
+  });*/
 });
 
 module.exports = connection;
